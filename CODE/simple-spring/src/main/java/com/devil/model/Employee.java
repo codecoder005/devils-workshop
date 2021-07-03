@@ -1,6 +1,8 @@
 package com.devil.model;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Comparable<Employee>, Serializable{
 	private Integer empId;
 	private String firstName;
 	private String dept;
@@ -37,6 +39,22 @@ public class Employee {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	@Override
+	public int compareTo(Employee o) {
+		if(this.getEmpId()<o.getEmpId()) {
+			return -1;
+		}else if(this.getEmpId()==o.getEmpId()) {
+			return 0;
+		}
+		return 1;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", firstName=" + firstName + ", dept=" + dept + ", message=" + message
+				+ "]";
 	}
 	
 	
