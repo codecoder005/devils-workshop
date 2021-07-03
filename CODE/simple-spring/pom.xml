@@ -15,7 +15,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<jt400.version>9.5</jt400.version>
+		<!-- <jt400.version>9.5</jt400.version> -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,12 +35,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-		<!-- DB Library - start -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
-			<groupId>net.sf.jt400</groupId>
-			<artifactId>jt400-jdk8</artifactId>
-			<version>${jt400.version}</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.25</version>
 		</dependency>
+		<!-- DB Library - start -->
+		<!-- <dependency> <groupId>net.sf.jt400</groupId> <artifactId>jt400-jdk8</artifactId> 
+			<version>${jt400.version}</version> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
