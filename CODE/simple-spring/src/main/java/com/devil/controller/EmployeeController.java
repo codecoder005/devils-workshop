@@ -30,7 +30,7 @@ public class EmployeeController {
 	public Employee getEmployeeById(@PathVariable Integer empId) {
 		Employee employee = null;
 		try {
-			final String sqlQuery = "SELECT * FROM EMPLOYEE WHERE EMP_ID = ?";
+			final String sqlQuery = "SELECT * FROM employee WHERE EMP_ID = ?";
 			employee = jdbcTemplate.queryForObject(sqlQuery, 
 							new BeanPropertyRowMapper<>(Employee.class), 
 							empId);

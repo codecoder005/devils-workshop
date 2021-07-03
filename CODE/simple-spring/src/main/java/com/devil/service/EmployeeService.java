@@ -17,6 +17,14 @@ public class EmployeeService {
 	public void postConstruct() {
 		LOGGER.info("INITIATING DATABASE SETUP!");
 		try {
+			try {
+				jdbcTemplate.execute("DROP TABLE employee");
+				LOGGER.info("employee TABLE DROPED");
+			}catch (Exception e) {
+				LOGGER.error("ERROR OCCURRED WHILE DROPPING employee table");
+				LOGGER.error(e.getMessage());
+				e.printStackTrace();
+			}
 			String tableCreateQeury = new StringBuilder("create table employee(")
 												.append("	emp_id int primary key,")
 												.append("	first_name varchar(20),")
