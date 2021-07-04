@@ -1,4 +1,4 @@
 FROM openjdk:11
-ADD target/simple-spring.jar simple-spring.jar
+ADD target/spring-native.jar spring-native.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","simple-spring.jar"]
+ENTRYPOINT ["java","-jar","spring-native.jar"]
