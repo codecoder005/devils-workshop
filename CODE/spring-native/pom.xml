@@ -48,7 +48,7 @@
 							<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
 						</env>
 					</image>
-					<finalName>spring-native</finalName>
+					<!-- <finalName>spring-native</finalName> -->
 				</configuration>
 			</plugin>
 			<plugin>
