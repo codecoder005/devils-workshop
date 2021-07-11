@@ -18,14 +18,14 @@ public class EmployeeService {
 		LOGGER.info("INITIATING DATABASE SETUP!");
 		try {
 			try {
-				jdbcTemplate.execute("DROP TABLE employee");
+				jdbcTemplate.execute("drop table if exists employee");
 				LOGGER.info("employee TABLE DROPED");
 			}catch (Exception e) {
 				LOGGER.error("ERROR OCCURRED WHILE DROPPING employee table");
 				LOGGER.error(e.getMessage());
 				e.printStackTrace();
 			}
-			String tableCreateQeury = new StringBuilder("create table employee(")
+			String tableCreateQeury = new StringBuilder("create table if not exists employee(")
 												.append("	emp_id int primary key,")
 												.append("	first_name varchar(20),")
 												.append("	dept varchar(10)")
@@ -33,9 +33,9 @@ public class EmployeeService {
 												.toString();
 			jdbcTemplate.execute(tableCreateQeury);
 			LOGGER.info("EMPLOYEE TABLE CREATED!");
-			jdbcTemplate.update("insert into employee(emp_id,first_name,dept) values(1,'Ram','TECH')");
-			jdbcTemplate.update("insert into employee(emp_id,first_name,dept) values(2,'Venu','GOV')");
-			jdbcTemplate.update("insert into employee(emp_id,first_name,dept) values(3,'Raghav','ML')");
+			jdbcTemplate.update("insert into employee(emp_id,first_name,dept) select * from (select 1,'Ram','TECH') as tmp where not exists( select emp_id from employee where emp_id=1) limit 1");
+			jdbcTemplate.update("insert into employee(emp_id,first_name,dept) select * from (select 2,'Venu','GOV') as tmp where not exists( select emp_id from employee where emp_id=2) limit 1");
+			jdbcTemplate.update("insert into employee(emp_id,first_name,dept) select * from (select 3,'Raghav','ML') as tmp where not exists( select emp_id from employee where emp_id=3) limit 1");
 			LOGGER.info("SAMPLE DATA INSERTED INTO EMPLOYEE!");
 			LOGGER.info("DATABASE SETUP DONE.");
 		}catch (Exception e) {
