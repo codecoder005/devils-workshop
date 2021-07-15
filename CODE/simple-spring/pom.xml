@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.25</version>
+			<version>8.0.18</version>
 		</dependency>
 		<!-- DB Library - start -->
 		<!-- <dependency> <groupId>net.sf.jt400</groupId> <artifactId>jt400-jdk8</artifactId> 

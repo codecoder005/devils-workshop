@@ -34,12 +34,12 @@ public class EmployeeController {
 			employee = jdbcTemplate.queryForObject(sqlQuery, 
 							new BeanPropertyRowMapper<>(Employee.class), 
 							empId);
-			employee.setMessage("WE FOUND AN EMPLOYEE WITH ID: "+empId);
+			employee.setAdditionalInfo("WE FOUND AN EMPLOYEE WITH ID: "+empId);
 		}catch (Exception e) {
 			LOGGER.error("NO EMPLOYEE FOUND WITH ID: "+empId);
 			employee = new Employee();
 			employee.setEmpId(empId);
-			employee.setMessage("INVALID EMPLOYEE ID!");
+			employee.setAdditionalInfo("INVALID EMPLOYEE ID!");
 		}
 		return employee;
 	}
