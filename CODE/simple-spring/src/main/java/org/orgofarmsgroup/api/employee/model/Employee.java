@@ -110,4 +110,11 @@ public class Employee implements Comparable<Employee>, Serializable{
 		}
 		return 0;
 	}
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
+				+ lastName + ", managerId=" + managerId + ", dept=" + dept + ", salary=" + salary + ", gender=" + gender
+				+ ", dateOfJoining=" + dateOfJoining + ", status=" + status + ", lastModUser=" + lastModUser
+				+ ", lastModTimeDate=" + lastModTimeDate + ", additionalInfo=" + additionalInfo + "]";
+	}
 }

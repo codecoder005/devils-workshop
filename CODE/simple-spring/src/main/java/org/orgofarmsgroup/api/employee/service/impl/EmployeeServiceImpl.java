@@ -14,6 +14,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.mysql.cj.exceptions.CJCommunicationsException;
+
 @Component
 public class EmployeeServiceImpl implements EmployeeService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceImpl.class);
@@ -38,7 +40,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 			employee.setEmpId(empId);
 			employee.setAdditionalInfo(e.getMessage());
 			e.printStackTrace();
-		}catch (Exception e) {
+		}catch (CJCommunicationsException e) {
+			employee = new Employee();
+			employee.setEmpId(empId);
+			employee.setAdditionalInfo(e.getMessage());
+			e.printStackTrace();
+		}
+		catch (Exception e) {
 			employee = new Employee();
 			employee.setEmpId(empId);
 			employee.setAdditionalInfo(e.getMessage());
@@ -65,6 +73,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 				employee.setDept(rowSet.getString("DEPT"));
 				allEmployees.add(employee);
 			}
+		}catch (CJCommunicationsException e) {
+			allEmployees = new ArrayList<Employee>();
+			LOGGER.warn(e.getMessage());
+			e.printStackTrace();
 		}catch (Exception e) {
 			allEmployees = new ArrayList<Employee>();
 			LOGGER.warn(e.getMessage());
