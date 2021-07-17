@@ -6,8 +6,14 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+/**
+ * 
+ * @author ramakrishna.j01
+ *
+ */
 public class Admin implements Comparable<Admin>, Serializable {
-    private String adminId;
+	private static final long serialVersionUID = 1L;
+	private String adminId;
     private String emailId;
     private String authString;
     private String accountLocked;

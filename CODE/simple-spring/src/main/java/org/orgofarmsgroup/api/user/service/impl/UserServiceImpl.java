@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void changePassword(ChangePasswordModel changePasswordModel) {
-
+    	LOGGER.info("CHANGING PASSWORD.");
     }
     private static final String qryAuthenticateUser = new StringBuilder("SELECT * FROM T_USER_SECURE ")
                                                     .append("WHERE USER_ID = ? ")

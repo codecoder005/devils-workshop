@@ -1,21 +1,23 @@
 package org.orgofarmsgroup.api.user.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
-
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+import org.jetbrains.annotations.NotNull;
+
+/**
+ * 
+ * @author ramakrishna.j01
+ *
+ */
 //@Getter
 //@Setter
 //@AllArgsConstructor
 //@NoArgsConstructor
 public class User implements Comparable<User>, Serializable {
-    private String userId;
+	private static final long serialVersionUID = 1L;
+	private String userId;
     private String emailId;
     private String authString;
     private String accountLocked;
