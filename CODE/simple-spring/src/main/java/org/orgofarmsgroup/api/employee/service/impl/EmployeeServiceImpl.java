@@ -22,7 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	private final String qryGetEmployeeById = new StringBuilder("SELECT ")
-														.append("EMP_ID INT,FIRST_NAME,MIDDLE_NAME,LAST_NAME, ")
+														.append("EMP_ID,FIRST_NAME,MIDDLE_NAME,LAST_NAME, ")
 														.append("MANAGER_ID,DEPT,SALARY,GENDER,DATE_OF_JOINING, ")
 														.append("STATUS,LAST_MOD_USER,LAST_MOD_TIME_DATE,ADDITIONAL_INFO ").append("FROM EMPLOYEE ")
 														.append("WHERE EMP_ID = ? ").toString();
@@ -56,7 +56,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	private final String qryGetAllEmployees = new StringBuilder("SELECT ")
-														.append("EMP_ID INT,FIRST_NAME,MIDDLE_NAME,LAST_NAME, ")
+														.append("EMP_ID,FIRST_NAME,MIDDLE_NAME,LAST_NAME, ")
 														.append("MANAGER_ID,DEPT,SALARY,GENDER,DATE_OF_JOINING, ")
 														.append("STATUS,LAST_MOD_USER,LAST_MOD_TIME_DATE,ADDITIONAL_INFO ")
 														.append("FROM EMPLOYEE ").toString();
