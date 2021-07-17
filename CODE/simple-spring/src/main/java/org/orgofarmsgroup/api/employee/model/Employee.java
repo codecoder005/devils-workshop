@@ -1,8 +1,9 @@
-package com.devil.model;
+package org.orgofarmsgroup.api.employee.model;
 
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+
 /**
  * 
  * @author Ramakrishna Janapureddy
