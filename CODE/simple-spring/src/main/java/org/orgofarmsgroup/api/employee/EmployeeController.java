@@ -21,6 +21,11 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
+	@GetMapping
+	public String employeePage() {
+		return "Employee page";
+	}
+	
 	@GetMapping("/get")
 	public Employee getEmployeeById(@RequestParam Integer empId) {
 		Employee employee = null;

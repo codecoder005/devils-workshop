@@ -21,7 +21,7 @@ public class StartUpServices {
 		try {
 			LOGGER.info("POST-CONSTRUCT Initiated...");
 			Timestamp curentTimestamp = jdbcTemplate.queryForObject("SELECT CURRENT_TIMESTAMP", Timestamp.class);
-			LOGGER.info(curentTimestamp.toString());
+			LOGGER.info("DATABASE CONNECTION SUCCESS. "+curentTimestamp.toString());
 		}catch (Exception e) {
 			LOGGER.warn(e.getMessage());
 			LOGGER.error("DATABASE CONNECTION FAILED.");

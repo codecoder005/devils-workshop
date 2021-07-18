@@ -34,7 +34,7 @@ public class OrgofarmsGroupSecurityConfiguration extends WebSecurityConfigurerAd
 				"/","static/css","static/js",
 				"/hello",
 				"/user","/user/authorized","/user/authenticate",
-				"/employee","/employee/get","/employee/get/all",
+				"/employee/**",
 				"/admin","/admin/authorized","/admin/authenticate"
 		};
 		http
